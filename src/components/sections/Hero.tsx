@@ -19,7 +19,7 @@ export function Hero() {
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-5 pb-20 pt-32 sm:px-8">
         <p className="eyebrow animate-in fade-in slide-in-from-bottom-2 duration-700">
           <span className="h-px w-8 bg-primary" />
-          Automotive · Waalwijk
+          Automotive · Oss
         </p>
 
         <h1 className="mt-6 max-w-4xl font-display text-5xl font-bold leading-[0.95] text-ink-foreground sm:text-7xl lg:text-8xl">
