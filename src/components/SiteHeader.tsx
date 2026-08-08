@@ -1,0 +1,107 @@
+import { useEffect, useState } from "react";
+import { Menu, Phone, X } from "lucide-react";
+
+import { Logo } from "@/components/Logo";
+import { Button } from "@/components/ui/button";
+import { navItems, site } from "@/data/site";
+import { cn } from "@/lib/utils";
+
+export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        scrolled || open
+          ? "border-b border-border bg-background/90 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent",
+      )}
+    >
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 sm:px-8 lg:grid-cols-[auto_1fr_auto]">
+        <a href="#hero" className="min-w-0">
+          <Logo tone={scrolled || open ? "dark" : "light"} />
+        </a>
+
+        <nav className="hidden justify-center gap-8 lg:flex">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "relative text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full",
+                scrolled
+                  ? "text-foreground hover:text-primary"
+                  : "text-ink-foreground/85 hover:text-primary",
+              )}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <Button asChild size="sm" className="hidden shadow-[var(--shadow-glow)] sm:inline-flex">
+            <a href="#contact">Maak een afspraak</a>
+          </Button>
+          <a
+            href={site.telefoonHref}
+            aria-label="Bel ons"
+            className={cn(
+              "grid h-10 w-10 place-items-center rounded-md border transition-colors sm:hidden",
+              scrolled || open
+                ? "border-border text-foreground"
+                : "border-ink-foreground/25 text-ink-foreground",
+            )}
+          >
+            <Phone className="h-4 w-4" />
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Menu"
+            className={cn(
+              "grid h-10 w-10 place-items-center rounded-md border transition-colors lg:hidden",
+              scrolled || open
+                ? "border-border text-foreground"
+                : "border-ink-foreground/25 text-ink-foreground",
+            )}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+      </div>
+
+      {open && (
+        <nav className="border-t border-border bg-background px-5 py-4 lg:hidden">
+          <ul className="flex flex-col">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block border-b border-border py-3 font-display text-lg uppercase tracking-wide text-foreground transition-colors hover:text-primary"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <Button asChild className="mt-4 w-full">
+            <a href="#contact" onClick={() => setOpen(false)}>
+              Maak een afspraak
+            </a>
+          </Button>
+        </nav>
+      )}
+    </header>
+  );
+}
