@@ -8,8 +8,8 @@ export const site = {
   email: "info@brabantsejongens.nl",
   adres: {
     straat: "Industrieweg 12",
-    postcode: "5145 PW",
-    plaats: "Waalwijk",
+    postcode: "5342 LP",
+    plaats: "Oss",
   },
   openingstijden: [
     { dag: "Maandag t/m vrijdag", tijd: "08:00 – 17:30" },
@@ -64,7 +64,7 @@ export const testimonials = [
     quote:
       "Eerlijk advies, netjes op tijd klaar en geen verrassingen op de rekening. Precies wat je wil van een garage.",
     naam: "Sanne de Wit",
-    plaats: "Waalwijk",
+    plaats: "Oss",
   },
   {
     quote:

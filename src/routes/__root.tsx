@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "De garage met de zacht G — onderhoud, reparatie, APK en occasions in Waalwijk.",
+          "De garage met de zacht G — onderhoud, reparatie, APK en occasions in Oss.",
       },
       { name: "author", content: "Brabantse Jongens Automotive" },
       { property: "og:type", content: "website" },
@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700&family=Inter+Tight:wght@400;500;600&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
 

@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <Logo tone="light" />
+            <Logo />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-ink-foreground/60">
               {site.slogan}. {site.pitch}. {site.belofte}
             </p>

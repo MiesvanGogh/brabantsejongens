@@ -9,9 +9,9 @@ import { Cars } from "@/components/sections/Cars";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Contact } from "@/components/sections/Contact";
 
-const title = "Brabantse Jongens Automotive | Garage & occasions Waalwijk";
+const title = "Brabantse Jongens Automotive | Garage & occasions Oss";
 const description =
-  "De garage met de zacht G. Onderhoud, reparatie, APK en occasions in Waalwijk. Gemoedelijk, gedreven en gespecialiseerd.";
+  "De garage met de zacht G. Onderhoud, reparatie, APK en occasions in Oss. Gemoedelijk, gedreven en gespecialiseerd.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
