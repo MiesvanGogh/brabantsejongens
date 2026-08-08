@@ -8,7 +8,7 @@ export const site = {
   email: "info@brabantsejongens.nl",
   adres: {
     straat: "Industrieweg 12",
-    postcode: "5145 PW",
+    postcode: "5342 LP",
     plaats: "Oss",
   },
   openingstijden: [
