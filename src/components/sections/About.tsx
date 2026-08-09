@@ -35,9 +35,6 @@ export function About() {
             klanten help je met een kop koffie erbij. Wat begon in een kleine loods is uitgegroeid
             tot een moderne werkplaats waar techniek en Brabantse gastvrijheid samenkomen.
           </p>
-          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            {site.pitch}. {site.belofte}
-          </p>
 
           <ul className="mt-8 space-y-4">
             {punten.map((p) => (

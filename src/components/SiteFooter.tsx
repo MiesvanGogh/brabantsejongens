@@ -37,7 +37,7 @@ export function SiteFooter() {
               {navItems.map((item) => (
                 <li key={item.href}>
                   <a
-                    href={item.href}
+                    href={`/${item.href}`}
                     className="text-sm text-ink-foreground/70 transition-colors hover:text-primary"
                   >
                     {item.label}
