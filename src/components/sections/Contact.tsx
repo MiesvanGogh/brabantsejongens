@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -77,6 +77,17 @@ export function Contact() {
               className="h-72 w-full"
               loading="lazy"
             />
+            <div className="flex flex-col gap-3 border-t border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm text-muted-foreground">
+                Plan direct je route naar {site.adres.straat}, {site.adres.plaats}.
+              </p>
+              <Button asChild size="sm" className="shrink-0">
+                <a href={site.mapsRouteHref} target="_blank" rel="noopener noreferrer">
+                  <Navigation className="mr-1 h-4 w-4" />
+                  Route plannen
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
 

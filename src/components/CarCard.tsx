@@ -1,8 +1,8 @@
 import { ArrowRight, Calendar, Fuel, Gauge, Settings2 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 import { Button } from "@/components/ui/button";
 import { formatKm, formatPrijs, type Car } from "@/data/cars";
-import { site } from "@/data/site";
 
 export function CarCard({ car }: { car: Car }) {
   const specs = [
@@ -32,7 +32,15 @@ export function CarCard({ car }: { car: Car }) {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
           {car.merk}
         </p>
-        <h3 className="mt-1 text-xl leading-tight">{car.model}</h3>
+        <h3 className="mt-1 text-xl leading-tight">
+          <Link
+            to="/occasions/$id"
+            params={{ id: car.id }}
+            className="transition-colors hover:text-primary"
+          >
+            {car.model}
+          </Link>
+        </h3>
 
         <ul className="mt-5 grid grid-cols-2 gap-3 text-sm text-muted-foreground">
           {specs.map((spec) => (
@@ -57,14 +65,10 @@ export function CarCard({ car }: { car: Car }) {
         )}
 
         <Button asChild variant="outline" className="group/btn mt-6 w-full">
-          <a
-            href={`mailto:${site.email}?subject=${encodeURIComponent(
-              `Meer info over ${car.merk} ${car.model}`,
-            )}`}
-          >
+          <Link to="/occasions/$id" params={{ id: car.id }}>
             Meer info
             <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-          </a>
+          </Link>
         </Button>
       </div>
     </article>
