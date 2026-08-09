@@ -6,7 +6,7 @@ export function Logo({ className }: { className?: string; tone?: "dark" | "light
     <img
       src={logoAsset.url}
       alt="Brabantse Jongens Automotive"
-      className={cn("h-10 w-auto shrink-0 object-contain mix-blend-screen sm:h-12", className)}
+      className={cn("h-10 w-auto shrink-0 object-contain sm:h-12", className)}
     />
   );
 }
