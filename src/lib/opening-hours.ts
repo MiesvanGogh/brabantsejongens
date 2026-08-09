@@ -25,7 +25,7 @@ const dagNamen = [
 ];
 
 const toMinutes = (t: string) => {
-  const [h, m] = t.split(":").map(Number);
+  const [h = 0, m = 0] = t.split(":").map(Number);
   return h * 60 + m;
 };
 
