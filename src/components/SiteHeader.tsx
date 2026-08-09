@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { navItems, site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
-export function SiteHeader() {
+export function SiteHeader({ solid = false }: { solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
@@ -41,7 +41,7 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[transform,background-color,border-color] duration-300 will-change-transform",
         hidden && !open ? "-translate-y-full" : "translate-y-0",
-        scrolled || open
+        solid || scrolled || open
           ? "border-b border-ink-foreground/10 bg-[oklch(0.16_0.008_262/0.92)] backdrop-blur-md"
           : "border-b border-transparent bg-transparent",
       )}

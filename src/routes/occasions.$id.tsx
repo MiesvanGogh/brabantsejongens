@@ -43,7 +43,7 @@ export const Route = createFileRoute("/occasions/$id")({
 function OccasionNotFound() {
   return (
     <div className="min-h-screen bg-background">
-      <SiteHeader />
+      <SiteHeader solid />
       <main className="mx-auto max-w-3xl px-5 py-40 text-center sm:px-8">
         <h1 className="text-4xl">Deze occasion bestaat niet (meer)</h1>
         <p className="mt-4 text-muted-foreground">
@@ -71,7 +71,7 @@ function OccasionDetail() {
 
   return (
     <div className="min-h-screen bg-background">
-      <SiteHeader />
+      <SiteHeader solid />
       <main className="mx-auto max-w-7xl px-5 pb-24 pt-40 sm:px-8">
         <a
           href="/#aanbod"
