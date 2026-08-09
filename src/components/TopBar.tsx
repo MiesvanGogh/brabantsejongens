@@ -1,14 +1,23 @@
 import { Clock, MapPin, Phone, Star } from "lucide-react";
 
 import { site } from "@/data/site";
+import { useOpenStatus } from "@/lib/opening-hours";
+import { cn } from "@/lib/utils";
 
 export function TopBar() {
+  const status = useOpenStatus();
+
   return (
     <div className="w-full border-b border-ink-foreground/10 bg-[oklch(0.16_0.008_262)] text-ink-foreground">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-6 gap-y-2 px-5 py-2 text-[0.72rem] sm:px-8">
         <span className="flex items-center gap-2 font-semibold">
-          <span className="h-2 w-2 rounded-full bg-[oklch(0.72_0.17_150)]" />
-          Nu geopend
+          <span
+            className={cn(
+              "h-2 w-2 rounded-full",
+              status.open ? "bg-[oklch(0.72_0.17_150)]" : "bg-[oklch(0.65_0.2_25)]",
+            )}
+          />
+          {status.label}
         </span>
         <span className="hidden text-ink-foreground/25 sm:inline">|</span>
         <span className="flex items-center gap-2 text-ink-foreground/70">
@@ -22,8 +31,15 @@ export function TopBar() {
 
         <div className="ml-auto flex items-center gap-4">
           <span className="hidden items-center gap-1.5 rounded-sm border border-primary/50 px-2.5 py-1 text-primary sm:flex">
-            <Star className="h-3.5 w-3.5 fill-primary" />
-            <em className="font-semibold not-italic">4.9 op Google Reviews</em>
+            <span className="flex gap-0.5" aria-hidden>
+              {Array.from({ length: site.rating.maxSterren }).map((_, i) => (
+                <Star key={i} className="h-3 w-3 fill-primary" />
+              ))}
+            </span>
+            <em className="font-semibold not-italic">
+              {site.rating.score.toLocaleString("nl-NL", { minimumFractionDigits: 1 })} op Google
+              Reviews
+            </em>
           </span>
           <a
             href={site.telefoonHref}
