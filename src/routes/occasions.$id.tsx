@@ -9,17 +9,16 @@ import { site } from "@/data/site";
 
 export const Route = createFileRoute("/occasions/$id")({
   loader: ({ params }) => {
-    const car = getCarById(params.id);
-    if (!car) throw notFound();
-    return { car };
+    if (!getCarById(params.id)) throw notFound();
+    return null;
   },
-  head: ({ loaderData }) => {
-    if (!loaderData) {
+  head: ({ params }) => {
+    const car = getCarById(params.id);
+    if (!car) {
       return {
         meta: [{ title: "Occasion niet gevonden" }, { name: "robots", content: "noindex" }],
       };
     }
-    const { car } = loaderData;
     const title = `${car.merk} ${car.model} (${car.bouwjaar}) | Brabantse Jongens Automotive`;
     const description = `${car.merk} ${car.model} uit ${car.bouwjaar}, ${formatKm(
       car.kilometerstand,
@@ -60,7 +59,8 @@ function OccasionNotFound() {
 }
 
 function OccasionDetail() {
-  const { car } = Route.useLoaderData();
+  const { id } = Route.useParams();
+  const car = getCarById(id)!;
   const kern = [
     { icon: Calendar, label: "Bouwjaar", value: String(car.bouwjaar) },
     { icon: Gauge, label: "Kilometerstand", value: formatKm(car.kilometerstand) },
