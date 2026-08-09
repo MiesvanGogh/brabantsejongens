@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
 
 import { Logo } from "@/components/Logo";
@@ -9,19 +9,38 @@ import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
+  const lastY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    lastY.current = window.scrollY;
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+
+      const delta = y - lastY.current;
+      if (Math.abs(delta) > 6) {
+        setHidden(delta > 0 && y > 120);
+        lastY.current = y;
+      }
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (open) setHidden(false);
+  }, [open]);
+
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        "fixed inset-x-0 top-0 z-50 transition-[transform,background-color,border-color] duration-300 will-change-transform",
+        hidden && !open ? "-translate-y-full" : "translate-y-0",
         scrolled || open
           ? "border-b border-ink-foreground/10 bg-[oklch(0.16_0.008_262/0.92)] backdrop-blur-md"
           : "border-b border-transparent bg-transparent",
@@ -29,7 +48,7 @@ export function SiteHeader() {
     >
       <TopBar />
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 sm:px-8 lg:grid-cols-[auto_1fr_auto]">
-        <a href="#hero" className="min-w-0">
+        <a href="/#hero" className="min-w-0">
           <Logo />
         </a>
 
@@ -37,7 +56,7 @@ export function SiteHeader() {
           {navItems.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={`/${item.href}`}
               className={cn(
                 "relative text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full",
                 "text-ink-foreground/85 hover:text-primary",
@@ -50,7 +69,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <Button asChild size="sm" className="hidden shadow-[var(--shadow-glow)] sm:inline-flex">
-            <a href="#contact">Maak een afspraak</a>
+            <a href="/#contact">Maak een afspraak</a>
           </Button>
           <a
             href={site.telefoonHref}
@@ -82,7 +101,7 @@ export function SiteHeader() {
             {navItems.map((item) => (
               <li key={item.href}>
                 <a
-                  href={item.href}
+                  href={`/${item.href}`}
                   onClick={() => setOpen(false)}
                   className="block border-b border-ink-foreground/10 py-3 font-display text-lg uppercase tracking-wide text-ink-foreground transition-colors hover:text-primary"
                 >
@@ -92,7 +111,7 @@ export function SiteHeader() {
             ))}
           </ul>
           <Button asChild className="mt-4 w-full">
-            <a href="#contact" onClick={() => setOpen(false)}>
+            <a href="/#contact" onClick={() => setOpen(false)}>
               Maak een afspraak
             </a>
           </Button>
