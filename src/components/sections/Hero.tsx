@@ -1,4 +1,4 @@
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, Star } from "lucide-react";
 
 import heroImage from "@/assets/hero.jpg";
 import { Button } from "@/components/ui/button";
@@ -55,16 +55,29 @@ export function Hero() {
         </div>
 
         <dl className="mt-16 grid max-w-2xl grid-cols-2 gap-6 border-t border-ink-foreground/15 pt-8 sm:grid-cols-3">
-          {[
-            { k: "15+", v: "Jaar ervaring" },
-            { k: "Alle", v: "Merken welkom" },
-            { k: "9.4", v: "Gemiddelde klantscore" },
-          ].map((s) => (
-            <div key={s.v}>
-              <dt className="font-display text-3xl text-primary sm:text-4xl">{s.k}</dt>
-              <dd className="mt-1 text-sm text-ink-foreground/65">{s.v}</dd>
-            </div>
-          ))}
+          <div>
+            <dt className="font-display text-3xl text-primary sm:text-4xl">15+</dt>
+            <dd className="mt-1 text-sm text-ink-foreground/65">Jaar ervaring</dd>
+          </div>
+          <div>
+            <dt className="font-display text-3xl text-primary sm:text-4xl">Alle</dt>
+            <dd className="mt-1 text-sm text-ink-foreground/65">Merken welkom</dd>
+          </div>
+          <div>
+            <dt className="flex items-center gap-2">
+              <span className="flex gap-0.5 text-primary" aria-hidden>
+                {Array.from({ length: site.rating.maxSterren }).map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-current" />
+                ))}
+              </span>
+              <span className="font-display text-3xl text-primary sm:text-4xl">
+                {site.rating.score.toLocaleString("nl-NL", { minimumFractionDigits: 1 })}
+              </span>
+            </dt>
+            <dd className="mt-1 text-sm text-ink-foreground/65">
+              Gemiddelde klantscore ({site.rating.aantal} reviews)
+            </dd>
+          </div>
         </dl>
       </div>
     </section>
