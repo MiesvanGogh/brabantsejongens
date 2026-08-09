@@ -11,6 +11,10 @@ export const site = {
     postcode: "5342 LP",
     plaats: "Oss",
   },
+  rating: { score: 4.9, aantal: 128, maxSterren: 5 },
+  mapsRouteHref:
+    "https://www.google.com/maps/dir/?api=1&destination=" +
+    encodeURIComponent("Industrieweg 12, 5342 LP Oss"),
   openingstijden: [
     { dag: "Maandag t/m vrijdag", tijd: "08:00 – 17:30" },
     { dag: "Zaterdag", tijd: "09:00 – 14:00" },
