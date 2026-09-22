@@ -42,7 +42,7 @@ export const services = [
   {
     icon: "Cog",
     titel: "Reparatie",
-    tekst: "Van motorstoring tot koppeling — eerlijke diagnose en een duidelijke prijs.",
+    tekst: "Van motorstoring tot koppeling: eerlijke diagnose en een duidelijke prijs.",
   },
   {
     icon: "ClipboardCheck",
