@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "De garage met de zachte G — onderhoud, reparatie, APK en occasions in Oss.",
+          "De garage met de zachte G: onderhoud, reparatie, APK en occasions in Oss.",
       },
       { name: "author", content: "Brabantse Jongens Automotive" },
       { property: "og:type", content: "website" },

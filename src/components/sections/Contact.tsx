@@ -30,7 +30,7 @@ export function Contact() {
           Kom gerust langs
         </h2>
         <p className="mt-8 text-lg text-muted-foreground">
-          Even bellen, mailen of het formulier invullen — koffie staat klaar.
+          Even bellen, mailen of het formulier invullen, koffie staat klaar.
         </p>
       </div>
 
