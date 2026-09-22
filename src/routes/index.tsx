@@ -11,7 +11,7 @@ import { Contact } from "@/components/sections/Contact";
 
 const title = "Brabantse Jongens Automotive | Garage & occasions Oss";
 const description =
-  "De garage met de zacht G. Onderhoud, reparatie, APK en occasions in Oss. Gemoedelijk, gedreven en gespecialiseerd.";
+  "De garage met de zachte G. Onderhoud, reparatie, APK en occasions in Oss. Gemoedelijk, gedreven en gespecialiseerd.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

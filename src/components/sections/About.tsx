@@ -27,8 +27,8 @@ export function About() {
 
         <div className="order-1 lg:order-2">
           <p className="eyebrow">Over ons</p>
-          <h2 className="accent-rule mt-4 text-4xl leading-tight sm:text-5xl">
-            De garage met de zacht G
+          <h2 className="accent-rule mt-4 text-balance text-4xl leading-tight sm:text-5xl">
+            De garage met&nbsp;de <span className="whitespace-nowrap">zachte G</span>
           </h2>
           <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
             {site.naam} is ontstaan uit een simpele overtuiging: sleutelen doe je met kennis,
