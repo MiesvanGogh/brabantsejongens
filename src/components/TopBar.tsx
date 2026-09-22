@@ -1,4 +1,4 @@
-import { Clock, MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone, Star } from "lucide-react";
 
 import { site } from "@/data/site";
 import { useOpenStatus } from "@/lib/opening-hours";
@@ -30,8 +30,22 @@ export function TopBar() {
         </span>
 
         <a
+          href={site.googleReviewsHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-auto flex shrink-0 items-center gap-1.5 whitespace-nowrap transition-opacity hover:opacity-80"
+        >
+          <span className="flex items-center gap-0.5 text-primary">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="h-3 w-3 fill-current" />
+            ))}
+          </span>
+          <span className="hidden text-ink-foreground/70 sm:inline">Google Reviews</span>
+        </a>
+
+        <a
           href={site.telefoonHref}
-          className="hidden items-center gap-1.5 font-semibold text-primary transition-colors hover:text-primary/80 sm:ml-auto sm:flex"
+          className="hidden items-center gap-1.5 font-semibold text-primary transition-colors hover:text-primary/80 sm:flex"
         >
           <Phone className="h-3.5 w-3.5" />
           {site.telefoon}

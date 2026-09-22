@@ -6,6 +6,7 @@ import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
 import { Cars } from "@/components/sections/Cars";
+import { Reviews } from "@/components/sections/Reviews";
 import { Contact } from "@/components/sections/Contact";
 
 const title = "Brabantse Jongens Automotive | Garage & occasions Oss";
@@ -35,6 +36,7 @@ function Index() {
         <About />
         <Services />
         <Cars />
+        <Reviews />
         <Contact />
       </main>
       <SiteFooter />
