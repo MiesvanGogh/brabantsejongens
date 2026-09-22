@@ -1,4 +1,4 @@
-import { ArrowRight, Phone, Star } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 
 import heroImage from "@/assets/hero.jpg";
 import { Button } from "@/components/ui/button";
@@ -64,19 +64,8 @@ export function Hero() {
             <dd className="mt-1 text-sm text-ink-foreground/65">Merken welkom</dd>
           </div>
           <div>
-            <dt className="flex items-center gap-2">
-              <span className="flex gap-0.5 text-primary" aria-hidden>
-                {Array.from({ length: site.rating.maxSterren }).map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current" />
-                ))}
-              </span>
-              <span className="font-display text-3xl text-primary sm:text-4xl">
-                {site.rating.score.toLocaleString("nl-NL", { minimumFractionDigits: 1 })}
-              </span>
-            </dt>
-            <dd className="mt-1 text-sm text-ink-foreground/65">
-              Gemiddelde klantscore ({site.rating.aantal} reviews)
-            </dd>
+            <dt className="font-display text-3xl text-primary sm:text-4xl">APK</dt>
+            <dd className="mt-1 text-sm text-ink-foreground/65">Meestal binnen één dag</dd>
           </div>
         </dl>
       </div>
