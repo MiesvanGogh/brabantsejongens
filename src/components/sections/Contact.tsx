@@ -73,7 +73,7 @@ export function Contact() {
           <div className="overflow-hidden rounded-lg border border-border shadow-[var(--shadow-card)]">
             <iframe
               title="Locatie Brabantse Jongens Automotive"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=5.03%2C51.66%2C5.12%2C51.71&layer=mapnik"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=5.5304%2C51.7815%2C5.5394%2C51.7855&layer=mapnik&marker=51.7835134%2C5.5349082"
               className="h-72 w-full"
               loading="lazy"
             />
