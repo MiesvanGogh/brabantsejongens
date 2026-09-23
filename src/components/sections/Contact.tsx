@@ -75,7 +75,7 @@ export function Contact() {
               title="Locatie Brabantse Jongens Automotive"
               src={`https://maps.google.com/maps?q=${encodeURIComponent(
                 `${site.adres.straat}, ${site.adres.postcode} ${site.adres.plaats}`,
-              )}&z=16&output=embed`}
+              )}&z=14&output=embed`}
               className="block h-72 w-full border-0"
               loading="lazy"
             />
