@@ -11,7 +11,7 @@ export const weekSchema: DagInterval[] = [
   { open: "08:00", close: "17:00" },
   { open: "08:00", close: "17:00" },
   { open: "08:00", close: "17:00" },
-  { open: "09:00", close: "14:00" }, // zaterdag
+  null, // zaterdag
 ];
 
 const dagNamen = [

@@ -21,8 +21,7 @@ export const site = {
   openingstijden: [
     { dag: "Maandag t/m vrijdag", tijd: "08:00 – 17:00" },
     { dag: "Avonden", tijd: "Op afspraak" },
-    { dag: "Zaterdag", tijd: "09:00 – 14:00" },
-    { dag: "Zondag", tijd: "Gesloten" },
+    { dag: "Zaterdag en zondag", tijd: "Gesloten" },
   ],
 };
 
@@ -53,7 +52,7 @@ export const services = [
   {
     icon: "CircleDot",
     titel: "Banden & wielen",
-    tekst: "Uitlijnen, balanceren en nieuwe banden. Nodig? Dan liggen ze er meestal binnen een dag onder.",
+    tekst: "Banden vervangen, balanceren of uitlijnen? We helpen je snel weer op weg.",
   },
   {
     icon: "Snowflake",
@@ -63,6 +62,6 @@ export const services = [
   {
     icon: "Cpu",
     titel: "Elektronica",
-    tekst: "Uitlezen van foutcodes en elektronische diagnose met moderne apparatuur.",
+    tekst: "Van motorstoringen tot elektronische problemen: we kunnen je auto uitlezen en foutcodes analyseren met moderne diagnoseapparatuur. Zo weet je snel waar je aan toe bent.",
   },
 ] as const;

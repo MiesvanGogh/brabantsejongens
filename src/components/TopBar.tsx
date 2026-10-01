@@ -22,7 +22,7 @@ export function TopBar() {
 
         <span className="hidden items-center gap-2 text-ink-foreground/70 sm:flex">
           <Clock className="h-3.5 w-3.5 text-primary" />
-          Ma - Vr: 08:00 - 17:00, Za: 09:00 - 14:00, avond op afspraak
+          Ma - Vr: 08:00 - 17:00, avond op afspraak
         </span>
         <span className="hidden items-center gap-2 text-ink-foreground/70 sm:flex">
           <MapPin className="h-3.5 w-3.5 text-primary" />
