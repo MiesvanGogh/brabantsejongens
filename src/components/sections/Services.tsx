@@ -4,6 +4,8 @@ import {
   CircleDot,
   ClipboardCheck,
   Cog,
+  Cpu,
+  Snowflake,
   Wrench,
   type LucideIcon,
 } from "lucide-react";
@@ -14,10 +16,12 @@ import { services } from "@/data/site";
 const icons: Record<string, LucideIcon> = {
   Wrench,
   Cog,
+  Cpu,
   ClipboardCheck,
   Car,
   CircleDot,
   BatteryCharging,
+  Snowflake,
 };
 
 export function Services() {

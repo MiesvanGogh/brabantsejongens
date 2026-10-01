@@ -6,11 +6,11 @@ export type DagInterval = { open: string; close: string } | null;
 /** Openingstijden per weekdag (index = getDay()). null = gesloten. */
 export const weekSchema: DagInterval[] = [
   null, // zondag
-  { open: "08:00", close: "17:30" },
-  { open: "08:00", close: "17:30" },
-  { open: "08:00", close: "17:30" },
-  { open: "08:00", close: "17:30" },
-  { open: "08:00", close: "17:30" },
+  { open: "08:00", close: "17:00" },
+  { open: "08:00", close: "17:00" },
+  { open: "08:00", close: "17:00" },
+  { open: "08:00", close: "17:00" },
+  { open: "08:00", close: "17:00" },
   { open: "09:00", close: "14:00" }, // zaterdag
 ];
 
@@ -58,7 +58,7 @@ function nowInNL(date = new Date()) {
 
 export type OpenStatus = {
   open: boolean;
-  /** Korte toelichting, bijv. "Nu geopend tot 17:30" of "Gesloten · opent maandag 08:00" */
+  /** Korte toelichting, bijv. "Nu geopend tot 17:00" of "Gesloten · opent maandag 08:00" */
   label: string;
 };
 

@@ -65,7 +65,7 @@ export function Hero() {
           </div>
           <div>
             <dt className="font-display text-3xl text-primary sm:text-4xl">APK</dt>
-            <dd className="mt-1 text-sm text-ink-foreground/65">Meestal binnen één dag</dd>
+            <dd className="mt-1 text-sm text-ink-foreground/65">Gecertificeerd vakmanschap</dd>
           </div>
         </dl>
       </div>
