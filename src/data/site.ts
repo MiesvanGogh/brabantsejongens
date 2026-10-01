@@ -56,7 +56,7 @@ export const services = [
     tekst: "Uitlijnen, balanceren en nieuwe banden. Nodig? Dan liggen ze er meestal binnen een dag onder.",
   },
   {
-    icon: "BatteryCharging",
+    icon: "Snowflake",
     titel: "Airco",
     tekst: "Airco-service en bijvullen, zodat je ook in de zomer koel rijdt.",
   },
