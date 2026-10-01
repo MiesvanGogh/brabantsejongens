@@ -19,7 +19,8 @@ export const site = {
     "https://www.google.com/search?q=" +
     encodeURIComponent("De Brabantse jongens automotive Dommelstraat 38B Oss"),
   openingstijden: [
-    { dag: "Maandag t/m vrijdag", tijd: "08:00 – 17:30" },
+    { dag: "Maandag t/m vrijdag", tijd: "08:00 – 17:00" },
+    { dag: "Avonden", tijd: "Op afspraak" },
     { dag: "Zaterdag", tijd: "09:00 – 14:00" },
     { dag: "Zondag", tijd: "Gesloten" },
   ],
@@ -36,18 +37,13 @@ export const navItems = [
 export const services = [
   {
     icon: "Wrench",
-    titel: "Onderhoud",
-    tekst: "Groot en klein onderhoud voor elk merk, met behoud van fabrieksgarantie.",
-  },
-  {
-    icon: "Cog",
-    titel: "Reparatie",
-    tekst: "Van motorstoring tot koppeling: eerlijke diagnose en een duidelijke prijs.",
+    titel: "Onderhoud & reparatie",
+    tekst: "Groot en klein onderhoud voor elk merk, met behoud van fabrieksgarantie. Bij storingen een eerlijke diagnose en een duidelijke prijs.",
   },
   {
     icon: "ClipboardCheck",
     titel: "APK-keuring",
-    tekst: "Snel geregeld, meestal binnen een dag. Kleine herstellingen doen we direct mee.",
+    tekst: "Wij zijn opgeleid en bevoegd om zelf de APK te keuren. Kleine herstellingen doen we direct mee.",
   },
   {
     icon: "Car",
@@ -57,11 +53,16 @@ export const services = [
   {
     icon: "CircleDot",
     titel: "Banden & wielen",
-    tekst: "Nieuwe banden, uitlijnen, balanceren en gratis seizoensopslag.",
+    tekst: "Uitlijnen, balanceren en nieuwe banden. Nodig? Dan liggen ze er meestal binnen een dag onder.",
   },
   {
     icon: "BatteryCharging",
-    titel: "Airco & elektronica",
-    tekst: "Airco-service, uitlezen van foutcodes en elektronische diagnose.",
+    titel: "Airco",
+    tekst: "Airco-service en bijvullen, zodat je ook in de zomer koel rijdt.",
+  },
+  {
+    icon: "Cpu",
+    titel: "Elektronica",
+    tekst: "Uitlezen van foutcodes en elektronische diagnose met moderne apparatuur.",
   },
 ] as const;
