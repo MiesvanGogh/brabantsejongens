@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 import { Logo } from "@/components/Logo";
-import { contactpersonen, navItems, site } from "@/data/site";
+import { navItems, overigeNummers, site } from "@/data/site";
 
 export function SiteFooter() {
   return (
@@ -55,7 +55,7 @@ export function SiteFooter() {
                 <br />
                 {site.adres.postcode} {site.adres.plaats}
               </p>
-              {contactpersonen.map((persoon) => (
+              {overigeNummers.map((persoon) => (
                 <p key={persoon.telefoonHref}>
                   <span className="text-ink-foreground/45">{persoon.naam}</span>{" "}
                   <a href={persoon.telefoonHref} className="transition-colors hover:text-primary">
