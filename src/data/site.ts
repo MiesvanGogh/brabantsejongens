@@ -1,8 +1,8 @@
 // Echte contactgegevens van het bedrijf.
-// Het eerste nummer is het hoofdnummer: dat staat in de knoppen bovenaan en bij de hero.
+// Het eerste nummer is het hoofdnummer: dat staat in de balk bovenaan en bij de knoppen.
 export const contactpersonen = [
-  { naam: "Gijs", telefoon: "06 10349148", telefoonHref: "tel:+31610349148" },
   { naam: "Selwin", telefoon: "06 54320184", telefoonHref: "tel:+31654320184" },
+  { naam: "Gijs", telefoon: "06 10349148", telefoonHref: "tel:+31610349148" },
 ] as const;
 
 export const site = {
@@ -29,6 +29,9 @@ export const site = {
     { dag: "Zaterdag en zondag", tijd: "Gesloten" },
   ],
 };
+
+// Nummer dat onderaan in de footer staat, naast het hoofdnummer: nu alleen Gijs.
+export const overigeNummers = contactpersonen.filter((p) => p.telefoonHref !== site.telefoonHref);
 
 export const navItems = [
   { label: "Over ons", href: "#over-ons" },
