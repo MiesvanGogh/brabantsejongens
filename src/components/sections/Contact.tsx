@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { site } from "@/data/site";
+import { contactpersonen, site } from "@/data/site";
 
 export function Contact() {
   const [sending, setSending] = useState(false);
@@ -45,12 +45,22 @@ export function Contact() {
                 {site.adres.postcode} {site.adres.plaats}
               </span>
             </li>
-            <li className="flex gap-4">
-              <Phone className="mt-1 h-5 w-5 shrink-0 text-primary" />
-              <a href={site.telefoonHref} className="transition-colors hover:text-primary">
-                {site.telefoon}
-              </a>
-            </li>
+            {contactpersonen.map((persoon) => (
+              <li key={persoon.telefoonHref} className="flex gap-4">
+                <Phone className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                <span>
+                  <span className="block text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    {persoon.naam}
+                  </span>
+                  <a
+                    href={persoon.telefoonHref}
+                    className="font-medium transition-colors hover:text-primary"
+                  >
+                    {persoon.telefoon}
+                  </a>
+                </span>
+              </li>
+            ))}
             <li className="flex gap-4">
               <Mail className="mt-1 h-5 w-5 shrink-0 text-primary" />
               <a href={`mailto:${site.email}`} className="transition-colors hover:text-primary">

@@ -1,10 +1,17 @@
+// Echte contactgegevens van het bedrijf.
+// Het eerste nummer is het hoofdnummer: dat staat in de knoppen bovenaan en bij de hero.
+export const contactpersonen = [
+  { naam: "Gijs", telefoon: "06 10349148", telefoonHref: "tel:+31610349148" },
+  { naam: "Selwin", telefoon: "06 54320184", telefoonHref: "tel:+31654320184" },
+] as const;
+
 export const site = {
   naam: "De Brabantse jongens automotive",
   slogan: "De garage met de zachte G",
   pitch: "Gemoedelijk, gedreven en gespecialiseerd",
   belofte: "Vakmanschap waar we trots op zijn.",
-  telefoon: "+31 6 12 34 56 78",
-  telefoonHref: "tel:+31612345678",
+  telefoon: contactpersonen[0].telefoon,
+  telefoonHref: contactpersonen[0].telefoonHref,
   email: "info@brabantsejongens.nl",
   adres: {
     straat: "Dommelstraat 38B",
