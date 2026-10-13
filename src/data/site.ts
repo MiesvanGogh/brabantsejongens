@@ -1,4 +1,4 @@
-// Echte contactgegevens van het bedrijf.telefoon
+// Echte contactgegevens van het bedrijf.
 // Het eerste nummer is het hoofdnummer: dat staat in de knoppen bovenaan en bij de hero.
 export const contactpersonen = [
   { naam: "Gijs", telefoon: "06 10349148", telefoonHref: "tel:+31610349148" },
