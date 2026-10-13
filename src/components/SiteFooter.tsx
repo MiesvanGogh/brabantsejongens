@@ -76,7 +76,7 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} {site.naam}. Alle rechten voorbehouden.
           </p>
-          <p>KvK 12345678 · BTW NL001234567B01</p>
+          <p>KvK 42174120 · BTW NL870036531B01</p>
         </div>
       </div>
     </footer>
