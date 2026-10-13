@@ -24,10 +24,21 @@ export type Car = {
 };
 
 /**
- * Nieuwe auto toevoegen? Voeg hieronder simpelweg een nieuw object toe.
- * De kaarten én de detailpagina (/occasions/{id}) worden automatisch gegenereerd.
+ * Auto's die nu echt in de showroom staan.
+ * Op dit moment: geen voorraad. De pagina toont dan automatisch het
+ * "binnenkort"-vak.
+ *
+ * Nieuwe auto binnen? Verplaats het blokje uit showroomVoorbeelden hierheen
+ * (of tik een nieuw blokje), dan verschijnt de kaart én de detailpagina
+ * (/occasions/{id}) vanzelf.
  */
-export const cars: Car[] = [
+export const cars: Car[] = [];
+
+/**
+ * Voorbeeldauto's: laten zien hoe een blokje eruitziet en welke velden kunnen.
+ * Nog niet in verkoop, dus niet zichtbaar op de site.
+ */
+export const showroomVoorbeelden: Car[] = [
   {
     id: "vw-up",
     merk: "Volkswagen",
