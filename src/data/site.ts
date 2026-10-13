@@ -57,7 +57,7 @@ export const services = [
   {
     icon: "Snowflake",
     titel: "Airco",
-    tekst: "Airco-service en bijvullen, zodat je ook in de zomer koel rijdt.",
+    tekst: "Airco-service en bijvullen voor een optimaal werkende airco, het hele jaar door.",
   },
   {
     icon: "Cpu",

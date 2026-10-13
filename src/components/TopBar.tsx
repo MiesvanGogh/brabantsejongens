@@ -20,9 +20,12 @@ export function TopBar() {
           <span className="truncate">{status.label}</span>
         </span>
 
-        <span className="hidden items-center gap-2 text-ink-foreground/70 sm:flex">
+        <span className="hidden items-center gap-2 sm:flex">
           <Clock className="h-3.5 w-3.5 text-primary" />
-          Ma - Vr: 08:00 - 17:00, avond op afspraak
+          <span className="font-semibold text-ink-foreground">Ma – Vr: 08:00 – 17:00</span>
+          <span className="border-l border-primary/50 pl-2 text-ink-foreground/70">
+            Avonden op afspraak
+          </span>
         </span>
         <span className="hidden items-center gap-2 text-ink-foreground/70 sm:flex">
           <MapPin className="h-3.5 w-3.5 text-primary" />
