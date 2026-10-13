@@ -27,7 +27,7 @@ export function TopBar() {
             Avonden op afspraak
           </span>
         </span>
-        <span className="hidden items-center gap-2 text-ink-foreground/70 sm:flex">
+        <span className="hidden items-center gap-2 text-ink-foreground/70 lg:flex">
           <MapPin className="h-3.5 w-3.5 text-primary" />
           {site.adres.straat}, {site.adres.plaats}
         </span>
