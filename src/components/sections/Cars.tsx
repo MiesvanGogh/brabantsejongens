@@ -41,7 +41,7 @@ function Voorraad() {
 
 function BinnenKort() {
   return (
-    <div className="card-lift relative mt-14 overflow-hidden rounded-lg border border-border bg-card px-6 py-16 text-center shadow-[var(--shadow-card)] sm:px-12 lg:py-24">
+    <div className="card-lift relative mt-14 overflow-hidden rounded-lg border border-border bg-card px-6 py-14 text-center shadow-[var(--shadow-card)] sm:px-12 lg:py-20">
       <div className="pointer-events-none absolute -top-32 left-1/2 h-64 w-[38rem] -translate-x-1/2 rounded-full bg-primary/12 blur-3xl" />
       <div className="absolute -left-3 -top-3 hidden h-20 w-20 border-l-2 border-t-2 border-primary/60 sm:block" />
       <div className="absolute -bottom-3 -right-3 hidden h-20 w-20 border-b-2 border-r-2 border-primary/60 sm:block" />
@@ -78,9 +78,6 @@ function BinnenKort() {
           </Button>
         </div>
 
-        <p className="mt-8 text-sm text-muted-foreground">
-          Auto inruilen of verkopen? Dat kan altijd, ook nu.
-        </p>
       </div>
     </div>
   );
