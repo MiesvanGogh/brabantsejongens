@@ -14,10 +14,8 @@ export const site = {
   mapsRouteHref:
     "https://www.google.com/maps/dir/?api=1&destination=" +
     encodeURIComponent("Dommelstraat 38B, 5347 JL Oss"),
-  // Vervang dit later door de directe Google-reviewlink van het bedrijfsprofiel.
-  googleReviewsHref:
-    "https://www.google.com/search?q=" +
-    encodeURIComponent("De Brabantse jongens automotive Dommelstraat 38B Oss"),
+  // Directe link naar de Google-reviews van het bedrijfsprofiel.
+  googleReviewsHref: "https://reviewthis.biz/BrabantseJongens",
   openingstijden: [
     { dag: "Maandag t/m vrijdag", tijd: "08:00 – 17:00" },
     { dag: "Avonden", tijd: "Op afspraak" },
