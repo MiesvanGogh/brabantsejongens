@@ -20,7 +20,7 @@ export function Reviews() {
 
         <p className="mt-8 text-lg text-muted-foreground">
           We zijn net gestart met ons Google-profiel, dus hier verschijnen binnenkort de echte
-          beoordelingen van onze klanten. Ben je bij ons geweest? Dan stellen we een eerlijke review
+          beoordelingen van onze klanten. Bent u bij ons geweest? Dan stellen we een eerlijke review
           enorm op prijs.
         </p>
 

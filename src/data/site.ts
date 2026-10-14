@@ -6,7 +6,7 @@ export const contactpersonen = [
 ] as const;
 
 export const site = {
-  naam: "De Brabantse jongens automotive",
+  naam: "Brabantse Jongens Automotive",
   slogan: "De garage met de zachte G",
   pitch: "Gemoedelijk, gedreven en gespecialiseerd",
   belofte: "Vakmanschap waar we trots op zijn.",
@@ -58,7 +58,7 @@ export const services = [
   {
     icon: "CircleDot",
     titel: "Banden & wielen",
-    tekst: "Banden vervangen, balanceren of uitlijnen? We helpen je snel weer op weg.",
+    tekst: "Banden vervangen, balanceren of uitlijnen? We helpen u snel weer op weg.",
   },
   {
     icon: "Snowflake",
@@ -68,6 +68,6 @@ export const services = [
   {
     icon: "Cpu",
     titel: "Elektronica",
-    tekst: "Van motorstoringen tot elektronische problemen: we kunnen je auto uitlezen en foutcodes analyseren met moderne diagnoseapparatuur. Zo weet je snel waar je aan toe bent.",
+    tekst: "Van motorstoringen tot elektronische problemen: we kunnen uw auto uitlezen en foutcodes analyseren met moderne diagnoseapparatuur. Zo weet u snel waar u aan toe bent.",
   },
 ] as const;

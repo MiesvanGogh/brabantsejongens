@@ -16,7 +16,15 @@ export const Route = createFileRoute("/occasions/$id")({
     const car = getCarById(params.id);
     if (!car) {
       return {
-        meta: [{ title: "Occasion niet gevonden" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Occasion niet gevonden | Brabantse Jongens Automotive" },
+          { name: "description", content: "Deze occasion is niet beschikbaar. Bekijk het actuele aanbod van Brabantse Jongens Automotive in Oss." },
+          { property: "og:title", content: "Occasion niet gevonden | Brabantse Jongens Automotive" },
+          { property: "og:description", content: "Deze occasion is niet beschikbaar. Bekijk het actuele aanbod van Brabantse Jongens Automotive in Oss." },
+          { property: "og:type", content: "website" },
+          { name: "twitter:card", content: "summary_large_image" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const title = `${car.merk} ${car.model} (${car.bouwjaar}) | Brabantse Jongens Automotive`;
@@ -60,7 +68,8 @@ function OccasionNotFound() {
 
 function OccasionDetail() {
   const { id } = Route.useParams();
-  const car = getCarById(id)!;
+  const car = getCarById(id);
+  if (!car) return <OccasionNotFound />;
   const kern = [
     { icon: Calendar, label: "Bouwjaar", value: String(car.bouwjaar) },
     { icon: Gauge, label: "Kilometerstand", value: formatKm(car.kilometerstand) },
