@@ -30,8 +30,6 @@ export const site = {
   ],
 };
 
-// Nummer dat onderaan in de footer staat, naast het hoofdnummer: nu alleen Gijs.
-export const overigeNummers = contactpersonen.filter((p) => p.telefoonHref !== site.telefoonHref);
 
 export const navItems = [
   { label: "Over ons", href: "#over-ons" },
