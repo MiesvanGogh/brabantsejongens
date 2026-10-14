@@ -1,4 +1,4 @@
-import logo from "@/assets/brabantse-jongens-logo.png";
+import logo from "@/assets/brabantse-jongens-logo.jpg";
 import { cn } from "@/lib/utils";
 
 export function Logo({ className }: { className?: string; tone?: "dark" | "light" }) {
