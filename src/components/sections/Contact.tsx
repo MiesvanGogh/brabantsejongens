@@ -18,7 +18,7 @@ export function Contact() {
     setTimeout(() => {
       setSending(false);
       form.reset();
-      toast.success("Bedankt! We nemen zo snel mogelijk contact met je op.");
+      toast.success("Bedankt! We nemen zo snel mogelijk contact met u op.");
     }, 600);
   };
 
@@ -91,7 +91,7 @@ export function Contact() {
             />
             <div className="flex flex-col gap-3 border-t border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-sm text-muted-foreground">
-                Plan direct je route naar {site.adres.straat}, {site.adres.plaats}.
+                Plan direct uw route naar {site.adres.straat}, {site.adres.plaats}.
               </p>
               <Button asChild size="sm" className="shrink-0">
                 <a href={site.mapsRouteHref} target="_blank" rel="noopener noreferrer">
@@ -110,7 +110,7 @@ export function Contact() {
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="naam">Naam</Label>
-              <Input id="naam" name="naam" required placeholder="Jouw naam" />
+              <Input id="naam" name="naam" required placeholder="Uw naam" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="telefoon">Telefoon</Label>
@@ -119,7 +119,7 @@ export function Contact() {
           </div>
           <div className="mt-5 space-y-2">
             <Label htmlFor="email">E-mail</Label>
-            <Input id="email" name="email" type="email" required placeholder="jij@email.nl" />
+            <Input id="email" name="email" type="email" required placeholder="naam@voorbeeld.nl" />
           </div>
           <div className="mt-5 space-y-2">
             <Label htmlFor="bericht">Bericht</Label>
@@ -128,7 +128,7 @@ export function Contact() {
               name="bericht"
               rows={5}
               required
-              placeholder="Waarmee kunnen we je helpen?"
+              placeholder="Waarmee kunnen we u helpen?"
             />
           </div>
           <Button type="submit" size="lg" disabled={sending} className="mt-6 w-full">

@@ -34,7 +34,7 @@ export function Services() {
             Alles onder één dak
           </h2>
           <p className="mt-8 text-lg text-muted-foreground">
-            Van APK tot complete revisie, bij ons weet je vooraf wat er gebeurt en wat het kost.
+            Van APK tot complete revisie, bij ons weet u vooraf wat er gebeurt en wat het kost.
           </p>
         </div>
 

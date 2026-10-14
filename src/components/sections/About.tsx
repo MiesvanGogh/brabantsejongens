@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import { site } from "@/data/site";
 
 const punten = [
-  "Gemoedelijk: je bent hier geen nummer, maar een klant met een naam.",
+  "Gemoedelijk: u bent hier geen nummer, maar een klant met een naam.",
   "Gedreven: we stoppen pas als het écht goed is.",
   "Gespecialiseerd: moderne diagnoseapparatuur voor elk merk.",
 ];
@@ -17,8 +17,8 @@ export function About() {
           De garage met&nbsp;de <span className="whitespace-nowrap">zachte G</span>
         </h2>
         <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-          {site.naam} is ontstaan uit een simpele overtuiging: sleutelen doe je met kennis,
-          klanten help je met een kop koffie erbij. Wat begon in een kleine loods is uitgegroeid
+          {site.naam} is ontstaan uit een simpele overtuiging: sleutelen doen we met kennis,
+          klanten helpen we met een kop koffie erbij. Wat begon in een kleine loods is uitgegroeid
           tot een moderne werkplaats waar techniek en Brabantse gastvrijheid samenkomen.
         </p>
 

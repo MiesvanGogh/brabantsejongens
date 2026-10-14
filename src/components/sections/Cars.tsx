@@ -59,7 +59,7 @@ function BinnenKort() {
         <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
           Op dit moment staan er geen auto&apos;s in de verkoop. We zijn druk met de volgende
           selectie, want elke auto gaat pas de showroom in als-ie volledig nagekeken is en verse
-          APK en beurt heeft. Daardoor duurt het soms iets langer, maar heb je wel direct goede
+          APK en beurt heeft. Daardoor duurt het soms iets langer, maar heeft u wel direct goede
           auto&apos;s om uit te kiezen.
         </p>
 
