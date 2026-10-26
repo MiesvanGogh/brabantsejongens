@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { toast } from "sonner";
 
@@ -10,6 +10,13 @@ import { contactpersonen, site } from "@/data/site";
 
 export function Contact() {
   const [sending, setSending] = useState(false);
+  const berichtRef = useRef<HTMLTextAreaElement>(null);
+
+  // Berichtveld groeit mee met de tekst; boven max-h-80 verschijnt pas een scrollbalk.
+  const groeiMee = (veld: HTMLTextAreaElement) => {
+    veld.style.height = "auto";
+    veld.style.height = `${veld.scrollHeight + veld.offsetHeight - veld.clientHeight}px`;
+  };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,6 +45,7 @@ export function Contact() {
       const result = (await response.json().catch(() => null)) as { success?: boolean } | null;
       if (!response.ok || result?.success !== true) throw new Error("Versturen mislukt");
       form.reset();
+      if (berichtRef.current) berichtRef.current.style.height = "";
       toast.success("Bedankt! We nemen zo snel mogelijk contact met u op.");
     } catch {
       toast.error(
@@ -159,9 +167,12 @@ export function Contact() {
             <Textarea
               id="bericht"
               name="bericht"
+              ref={berichtRef}
               rows={5}
               required
               placeholder="Waarmee kunnen we u helpen?"
+              onInput={(e) => groeiMee(e.currentTarget)}
+              className="max-h-80 resize-none"
             />
           </div>
           <Button type="submit" size="lg" disabled={sending} className="mt-6 w-full">
