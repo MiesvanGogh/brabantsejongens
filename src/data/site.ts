@@ -13,6 +13,10 @@ export const site = {
   telefoon: contactpersonen[0].telefoon,
   telefoonHref: contactpersonen[0].telefoonHref,
   email: "info@brabantsejongens.nl",
+  kvk: "42174120",
+  btw: "NL870036531B01",
+  // Openbare Web3Forms-sleutel: contactformulier mailt naar info@brabantsejongens.nl.
+  web3formsKey: "0fd9440f-2f45-4e4e-80fd-cc77075fbe35",
   adres: {
     straat: "Dommelstraat 38B",
     postcode: "5347 JL",
@@ -30,7 +34,6 @@ export const site = {
   ],
 };
 
-
 export const navItems = [
   { label: "Over ons", href: "#over-ons" },
   { label: "Diensten", href: "#diensten" },
@@ -43,12 +46,14 @@ export const services = [
   {
     icon: "Wrench",
     titel: "Onderhoud & reparatie",
-    tekst: "Groot en klein onderhoud voor elk merk, met behoud van fabrieksgarantie. Bij storingen een eerlijke diagnose en een duidelijke prijs.",
+    tekst:
+      "Groot en klein onderhoud voor elk merk, met behoud van fabrieksgarantie. Bij storingen een eerlijke diagnose en een duidelijke prijs.",
   },
   {
     icon: "ClipboardCheck",
     titel: "APK-keuring",
-    tekst: "Wij zijn opgeleid en bevoegd om zelf de APK te keuren. Kleine herstellingen doen we direct mee.",
+    tekst:
+      "Wij zijn opgeleid en bevoegd om zelf de APK te keuren. Kleine herstellingen doen we direct mee.",
   },
   {
     icon: "Car",
@@ -68,6 +73,7 @@ export const services = [
   {
     icon: "Cpu",
     titel: "Elektronica",
-    tekst: "Van motorstoringen tot elektronische problemen: we kunnen uw auto uitlezen en foutcodes analyseren met moderne diagnoseapparatuur. Zo weet u snel waar u aan toe bent.",
+    tekst:
+      "Van motorstoringen tot elektronische problemen: we kunnen uw auto uitlezen en foutcodes analyseren met moderne diagnoseapparatuur. Zo weet u snel waar u aan toe bent.",
   },
 ] as const;

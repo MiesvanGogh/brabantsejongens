@@ -11,24 +11,48 @@ import { contactpersonen, site } from "@/data/site";
 export function Contact() {
   const [sending, setSending] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSending(true);
     const form = e.currentTarget;
-    setTimeout(() => {
-      setSending(false);
+    const data = Object.fromEntries(new FormData(form)) as {
+      naam: string;
+      email: string;
+      [veld: string]: string;
+    };
+    setSending(true);
+    try {
+      // Web3Forms stuurt het bericht door naar het info-adres; geen eigen server nodig.
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        // Niet eindeloos op "Versturen…" blijven hangen als de dienst niet reageert.
+        signal: AbortSignal.timeout(15000),
+        body: JSON.stringify({
+          ...data,
+          access_key: site.web3formsKey,
+          subject: `Contactformulier website: ${data.naam}`,
+          from_name: site.naam,
+          replyto: data.email,
+        }),
+      });
+      const result = (await response.json().catch(() => null)) as { success?: boolean } | null;
+      if (!response.ok || result?.success !== true) throw new Error("Versturen mislukt");
       form.reset();
       toast.success("Bedankt! We nemen zo snel mogelijk contact met u op.");
-    }, 600);
+    } catch {
+      toast.error(
+        `Het versturen is niet gelukt. Belt u ons op ${site.telefoon} of mailt u naar ${site.email}.`,
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
     <section id="contact" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
       <div className="max-w-2xl">
         <p className="eyebrow">Contact</p>
-        <h2 className="accent-rule mt-4 text-4xl leading-tight sm:text-5xl">
-          Kom gerust langs
-        </h2>
+        <h2 className="accent-rule mt-4 text-4xl leading-tight sm:text-5xl">Kom gerust langs</h2>
         <p className="mt-8 text-lg text-muted-foreground">
           Even bellen, mailen of het formulier invullen, koffie staat klaar.
         </p>
@@ -107,6 +131,15 @@ export function Contact() {
           onSubmit={onSubmit}
           className="rounded-lg border border-border bg-card p-8 shadow-[var(--shadow-card)]"
         >
+          {/* Honeypot tegen spambots: onzichtbaar voor bezoekers, Web3Forms weigert aangevinkte berichten. */}
+          <input
+            type="checkbox"
+            name="botcheck"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="hidden"
+          />
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="naam">Naam</Label>
@@ -136,6 +169,13 @@ export function Contact() {
           </Button>
           <p className="mt-3 text-center text-xs text-muted-foreground">
             We reageren doorgaans binnen één werkdag.
+          </p>
+          <p className="mt-1 text-center text-xs text-muted-foreground">
+            Uw gegevens gebruiken we alleen om op uw bericht te reageren. Zie onze{" "}
+            <a href="/privacy" className="underline transition-colors hover:text-primary">
+              privacyverklaring
+            </a>
+            .
           </p>
         </form>
       </div>

@@ -14,22 +14,21 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "../components/ui/sonner";
 
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Pagina niet gevonden</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          De pagina die u zoekt bestaat niet (meer) of is verplaatst.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Naar de homepage
           </Link>
         </div>
       </div>
@@ -48,10 +47,10 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          Deze pagina kon niet worden geladen
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Er ging bij ons iets mis. Probeer de pagina opnieuw te laden of ga terug naar de homepage.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -61,13 +60,13 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            Opnieuw proberen
           </button>
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
-            Go home
+            Naar de homepage
           </a>
         </div>
       </div>
@@ -83,23 +82,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Brabantse Jongens Automotive" },
       {
         name: "description",
-        content:
-          "De garage met de zachte G: onderhoud, reparatie, APK en occasions in Oss.",
+        content: "De garage met de zachte G: onderhoud, reparatie, APK en occasions in Oss.",
       },
       { name: "author", content: "Brabantse Jongens Automotive" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "nl_NL" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
-      },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700&family=Inter+Tight:wght@400;500;600&display=swap",
       },
       { rel: "icon", href: "/favicon.png?v=bj-20261014", type: "image/png" },
     ],
@@ -113,7 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="nl">
       <head>
         <HeadContent />
       </head>
@@ -133,7 +126,6 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <Toaster />
-
     </QueryClientProvider>
   );
 }
