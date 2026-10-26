@@ -24,11 +24,11 @@ Een nieuwe occasion toevoegen = een item toevoegen aan de lijst in `src/data/car
 
 ## Lokaal draaien
 
-Vereist Node.js 20+.
+Vereist Node.js 22+ en [Bun](https://bun.sh) (zelfde package manager als Lovable; versies liggen vast in `bun.lock`).
 
 ```sh
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
-`npm run build` maakt de productie-build in `.output/public`.
+`bun run build` maakt de productie-build in `.output/public`.

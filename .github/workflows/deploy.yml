@@ -21,9 +21,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-      - run: npm install
-      - run: npm run build
+          node-version: 22
+      # Zelfde package manager en versies als Lovable: installeren exact volgens bun.lock.
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run build
       - name: Output-map voorbereiden
         run: |
           OUT=dist/client
