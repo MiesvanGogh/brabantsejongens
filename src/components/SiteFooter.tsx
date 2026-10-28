@@ -1,5 +1,5 @@
 import { Logo } from "@/components/Logo";
-import { site } from "@/data/site";
+import { contactpersonen, navItems, site } from "@/data/site";
 
 // Monochrome Google-"G" in de stijl van de andere pictogrammen.
 function GoogleIcon({ className }: { className?: string }) {
