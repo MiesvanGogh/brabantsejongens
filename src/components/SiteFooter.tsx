@@ -1,7 +1,14 @@
-import { Facebook, Instagram, Linkedin } from "lucide-react";
-
 import { Logo } from "@/components/Logo";
 import { contactpersonen, navItems, site } from "@/data/site";
+
+// Monochrome Google-"G" in de stijl van de andere pictogrammen.
+function GoogleIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+      <path d="M21.35 11.1h-9.17v2.96h5.3c-.23 1.39-1.6 4.07-5.3 4.07-3.19 0-5.8-2.65-5.8-5.9s2.61-5.9 5.8-5.9c1.82 0 3.03.77 3.73 1.43l2.54-2.45C16.77 3.66 14.78 2.75 12.18 2.75c-5.09 0-9.22 4.13-9.22 9.23s4.13 9.22 9.22 9.22c5.32 0 8.85-3.74 8.85-9 0-.6-.06-1.05-.15-1.52z" />
+    </svg>
+  );
+}
 
 export function SiteFooter() {
   return (
@@ -14,20 +21,15 @@ export function SiteFooter() {
               {site.slogan}. {site.pitch}. {site.belofte}
             </p>
             <div className="mt-6 flex gap-3">
-              {[
-                { Icon: Instagram, label: "Instagram" },
-                { Icon: Facebook, label: "Facebook" },
-                { Icon: Linkedin, label: "LinkedIn" },
-              ].map(({ Icon, label }) => (
-                <a
-                  key={label}
-                  href="#"
-                  aria-label={label}
-                  className="grid h-10 w-10 place-items-center rounded-md border border-ink-foreground/15 text-ink-foreground/70 transition-all duration-300 hover:border-primary hover:text-primary"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+              <a
+                href={site.googleBusinessHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google-bedrijfsprofiel"
+                className="grid h-10 w-10 place-items-center rounded-md border border-ink-foreground/15 text-ink-foreground/70 transition-all duration-300 hover:border-primary hover:text-primary"
+              >
+                <GoogleIcon className="h-4 w-4" />
+              </a>
             </div>
           </div>
 

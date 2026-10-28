@@ -27,6 +27,8 @@ export const site = {
     encodeURIComponent("Dommelstraat 38B, 5347 JL Oss"),
   // Directe link naar de Google-reviews van het bedrijfsprofiel.
   googleReviewsHref: "https://reviewthis.biz/BrabantseJongens",
+  // Link naar het Google-bedrijfsaccount (voor de socials-plek in de footer).
+  googleBusinessHref: "https://share.google/ubGXA5h4ECwzPd5wU",
   openingstijden: [
     { dag: "Maandag t/m vrijdag", tijd: "08:00 – 17:00" },
     { dag: "Avonden", tijd: "Op afspraak" },
