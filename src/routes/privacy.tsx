@@ -15,6 +15,8 @@ export const Route = createFileRoute("/privacy")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Privacy,
@@ -90,9 +92,9 @@ function Privacy() {
 
         <Sectie titel="Cookies">
           <p>
-            Deze website plaatst zelf geen cookies en gebruikt geen analyse- of advertentiediensten.
-            Alleen de kaart van Google Maps op de contactpagina plaatst cookies. Dit zijn cookies
-            van Google zelf; hoe Google daarmee omgaat, leest u in de{" "}
+            De Google Maps-kaart wordt niet geladen voordat u op ‘Google-cookies accepteren en kaart
+            tonen’ klikt. Tot dat moment maakt de kaart geen verbinding met Google. Na uw toestemming
+            kan Google cookies plaatsen en gegevens verwerken. Hoe Google daarmee omgaat, leest u in de{" "}
             <a
               href="https://policies.google.com/privacy?hl=nl"
               target="_blank"
@@ -104,8 +106,11 @@ function Privacy() {
             .
           </p>
           <p>
-            Wilt u deze cookies niet? Dan kunt u cookies van derden blokkeren in de instellingen van
-            uw browser. De rest van de website blijft dan gewoon werken.
+            U kunt de kaart verborgen laten en de website gewoon gebruiken. Onder de zichtbare kaart
+            kunt u uw toestemming intrekken. De kaart wordt dan verwijderd en maakt geen nieuwe
+            verbindingen met Google. Al geplaatste Google-cookies kunt u verwijderen via uw browser.
+            Uw toestemming wordt niet bewaard: bij een volgend bezoek of na het vernieuwen van de
+            pagina vragen wij opnieuw toestemming.
           </p>
         </Sectie>
 
