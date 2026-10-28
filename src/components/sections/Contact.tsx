@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { GoogleMap } from "@/components/GoogleMap";
 import { contactpersonen, site } from "@/data/site";
 
 export function Contact() {
@@ -113,14 +114,7 @@ export function Contact() {
           </ul>
 
           <div className="overflow-hidden rounded-lg border border-border shadow-[var(--shadow-card)]">
-            <iframe
-              title="Locatie Brabantse Jongens Automotive"
-              src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                `${site.adres.straat}, ${site.adres.postcode} ${site.adres.plaats}`,
-              )}&z=14&output=embed`}
-              className="block h-72 w-full border-0"
-              loading="lazy"
-            />
+            <GoogleMap />
             <div className="flex flex-col gap-3 border-t border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-sm text-muted-foreground">
                 Plan direct uw route naar {site.adres.straat}, {site.adres.plaats}.

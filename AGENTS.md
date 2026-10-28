@@ -11,3 +11,4 @@
 
 - Keep the shared business name and service copy in `src/data/site.ts` so every placement stays consistent.
 - Use the shared Logo component for the supplied full-name logo and derive the public favicon from the supplied BJ logo so branding stays consistent across placements.
+- Keep Google Maps behind the GoogleMap component's explicit, non-persisted consent state so no embed loads before permission and visitors can revoke it.
