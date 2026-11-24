@@ -76,7 +76,7 @@ export const services = [
     icon: "Hammer",
     titel: "Schadeherstel",
     tekst:
-      "Heeft uw auto schade? Wij herstellen het vakkundig en netjes, zodat u uw auto terugkrijgt als nieuw.",
+      "Schade aan uw auto? Wij zorgen voor een vakkundig herstel, zodat u weer zonder zorgen de weg op kunt.",
   },
   {
     icon: "Cpu",
