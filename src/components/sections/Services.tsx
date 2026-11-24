@@ -5,6 +5,7 @@ import {
   ClipboardCheck,
   Cog,
   Cpu,
+  Hammer,
   Snowflake,
   Wrench,
   type LucideIcon,
@@ -22,6 +23,7 @@ const icons: Record<string, LucideIcon> = {
   CircleDot,
   BatteryCharging,
   Snowflake,
+  Hammer,
 };
 
 export function Services() {

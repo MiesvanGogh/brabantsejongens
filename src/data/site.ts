@@ -73,6 +73,12 @@ export const services = [
     tekst: "Airco-service en bijvullen voor een optimaal werkende airco, het hele jaar door.",
   },
   {
+    icon: "Hammer",
+    titel: "Schadeherstel",
+    tekst:
+      "Van een kleine deuk tot grotere schade: wij herstellen uw auto vakkundig en zorgvuldig, alsof er nooit iets aan de hand is geweest.",
+  },
+  {
     icon: "Cpu",
     titel: "Elektronica",
     tekst:
